@@ -23,7 +23,7 @@ https://en.wikipedia.org/wiki/Natural_Color_System
 `from convacolor import *`
 
 ## Running requirements:
->- Python 3
+- Python 3
 
 ### Install it via pip:
 ```python
