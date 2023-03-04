@@ -16,7 +16,7 @@
 > If you change it to `'f'`, the values will be between 0 and 1
 
 ## Purpose: 
->- Make a library that allows to convert colors from RGB to NCS (Natural Color System).
+>- To make a library that allows to convert colors from RGB to NCS (Natural Color System).
 https://en.wikipedia.org/wiki/Natural_Color_System
 
 ## To access the library functions use:
