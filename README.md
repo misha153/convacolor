@@ -26,7 +26,7 @@ https://en.wikipedia.org/wiki/Natural_Color_System
 ## Running requirements:
 - Python 3
 
-### Install it via pip:
+## Install it via pip:
 ```python
 pip install convacolor
 ```
