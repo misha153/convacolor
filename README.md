@@ -1,5 +1,5 @@
 # convacolor
-[![GitHub license]
+[![GitHub license](https://img.shields.io/github/license/misha153/convacolor)](https://github.com/misha153/convacolor)
 
 ## Information
 ### Current version:
