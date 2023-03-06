@@ -155,8 +155,6 @@ def getHEX(r: int, g: int, b: int) -> str:
     """
     This function converts RGB to HEX.
 
-    NCS wiki => https://en.wikipedia.org/wiki/Natural_Color_System
-
     :param r: int
     :param g: int
     :param b: int
