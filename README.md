@@ -5,7 +5,7 @@
 ### Current version:
 - 0.9.2 (beta)
 ### Brief description of the functionality:
-> After importing the library, you get access to functions such as:
+> After importing the Module, you get access to functions such as:
 > - `getFloat`
 > - `getCMYK`
 > - `getHSV`
