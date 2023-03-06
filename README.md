@@ -6,20 +6,21 @@
 - 0.9.2 (beta)
 ### Brief description of the functionality:
 > After importing the library, you get access to functions such as:
-> - `get_cmyk`
-> - `get_hsv`
-> - `get_hex`
-> - `get_ncs`
+> - `getFloat`
+> - `getCMYK`
+> - `getHSV`
+> - `getHEX`
+> - `getNCS`
 > 
-> Functions `get_cmyk` and `get_hsv` have an additional parameter `output_mode`.
+> Functions `getCMYK` and `getHSV` have an additional parameter `output_mode`.
 > `'i'` is set by default, that is, the data will be in the standard for this color model in the form.
 > If you change it to `'f'`, the values will be between 0 and 1
 
 ## Purpose: 
->- To make a library that allows to convert colors from RGB to NCS (Natural Color System).
+>- To make a script that allows to convert colors from RGB to NCS (Natural Color System).
 https://en.wikipedia.org/wiki/Natural_Color_System
 
-## To access the library functions use:
+## To access the script functions use:
 `from convacolor import *`
 
 ## Running requirements:
