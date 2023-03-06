@@ -3,20 +3,22 @@ from convacolor.ncs_data import data
 from functools import wraps
 
 
-# ------------------------------------------
-#   Module repository on GitHub -:
-#   https://github.com/misha153/convacolor
-# 
-#   Several algorithms for converting from rgb to other color models
-# 
-#   Contact me if you want me to add something. My email:
-#   mishakarpov153@gmail.com
-# ------------------------------------------
+__version__ = '0.9.3'
+
+f"""
+Repository of this script on GitHub:
+https://github.com/misha153/convacolor
+
+Email of author:
+mishakarpov153@gmail.com
+
+Current version:
+{__version__}
+"""
 
 
-def ParamCheckList(func):
+def paramcheckwithmode(func):
 
-    # For get_cmyk and get_hsv
     @wraps(func)
     def inner(r, g, b, output_mode='i'):
 
@@ -33,9 +35,8 @@ def ParamCheckList(func):
     return inner
 
 
-def ParamCheckStr(func):
+def paramcheck(func):
 
-    # For get_hex and get_ncs
     @wraps(func)
     def inner(r, g, b):
 
@@ -49,11 +50,26 @@ def ParamCheckStr(func):
     return inner
 
 
-@ParamCheckList
-def get_cmyk(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
+@paramcheck
+def getFloat(r: int, g: int, b: int) -> list:
 
     """
-    This function converts from RGB color model to CMYK color model
+    This function converts RGB to float RGB.
+
+    :param r: int
+    :param g: int
+    :param b: int
+    :return: list
+    """
+
+    return [round(r/255, 4), round(g/255, 4), round(b/255, 4)]
+
+
+@paramcheckwithmode
+def getCMYK(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
+
+    """
+    This function converts from RGB color model to CMYK color model.
 
     CMYK wiki => https://en.wikipedia.org/wiki/CMYK_color_model
 
@@ -61,7 +77,7 @@ def get_cmyk(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
     :param g: int
     :param b: int
     :param output_mode: if 'f' is specified, all values will be between 0 and 1
-    :return: the list of cmyk values
+    :return: list
     """
 
     rgb_scale = 255
@@ -91,11 +107,11 @@ def get_cmyk(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
         return cmyk_float
 
 
-@ParamCheckList
-def get_hsv(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
+@paramcheckwithmode
+def getHSV(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
 
     """
-    This function converts from RGB color model to HSV color model
+    This function converts from RGB color model to HSV color model.
 
     HSV wiki => https://en.wikipedia.org/wiki/HSL_and_HSV
 
@@ -103,7 +119,7 @@ def get_hsv(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
     :param g: int
     :param b: int
     :param output_mode: if 'f' is specified, all values will be between 0 and 1
-    :return: the list of hsv values
+    :return: list
     """
 
     maxim = max(r, g, b)
@@ -133,18 +149,18 @@ def get_hsv(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
         return hsv_float
 
 
-@ParamCheckStr
-def get_hex(r: int, g: int, b: int) -> str:
+@paramcheck
+def getHEX(r: int, g: int, b: int) -> str:
 
     """
-    This function converts from RGB color model to NCS (Natural Color System)
+    This function converts RGB to HEX.
 
     NCS wiki => https://en.wikipedia.org/wiki/Natural_Color_System
 
     :param r: int
     :param g: int
     :param b: int
-    :return: the hex equivalent of rgb
+    :return: str
     """
 
     r, g, b = '{:X}'.format(r), '{:X}'.format(g), '{:X}'.format(b)
@@ -168,18 +184,18 @@ def get_hex(r: int, g: int, b: int) -> str:
     return f'#{res}'
     
 
-@ParamCheckStr
-def get_ncs(r: int, g: int, b: int) -> str:
+@paramcheck
+def getNCS(r: int, g: int, b: int) -> str:
         
         """
-        This function converts from RGB to NCS (Natural Color System)
+        This function converts from RGB to NCS (Natural Color System).
 
         NCS wiki => https://en.wikipedia.org/wiki/Natural_Color_System
 
         :param r: int
         :param g: int
         :param b: int
-        :return: the ncs equivalent of rgb
+        :return: str
         """
         
         # We use the Hue value and the Value from HSV
@@ -261,3 +277,4 @@ def get_ncs(r: int, g: int, b: int) -> str:
             count_rgb += 2
 
         return ncs_list[dif_list.index(min(dif_list))]
+
