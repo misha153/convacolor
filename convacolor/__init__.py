@@ -54,8 +54,6 @@ def paramcheck(func):
 def getFloat(r: int, g: int, b: int) -> list:
 
     """
-    This function converts RGB to float RGB.
-
     :param r: int
     :param g: int
     :param b: int
@@ -69,10 +67,6 @@ def getFloat(r: int, g: int, b: int) -> list:
 def getCMYK(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
 
     """
-    This function converts from RGB color model to CMYK color model.
-
-    CMYK wiki => https://en.wikipedia.org/wiki/CMYK_color_model
-
     :param r: int
     :param g: int
     :param b: int
@@ -111,10 +105,6 @@ def getCMYK(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
 def getHSV(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
 
     """
-    This function converts from RGB color model to HSV color model.
-
-    HSV wiki => https://en.wikipedia.org/wiki/HSL_and_HSV
-
     :param r: int
     :param g: int
     :param b: int
@@ -153,8 +143,6 @@ def getHSV(r: int, g: int, b: int, output_mode='i' or 'f') -> list:
 def getHEX(r: int, g: int, b: int) -> str:
 
     """
-    This function converts RGB to HEX.
-
     :param r: int
     :param g: int
     :param b: int
@@ -186,10 +174,6 @@ def getHEX(r: int, g: int, b: int) -> str:
 def getNCS(r: int, g: int, b: int) -> str:
         
         """
-        This function converts from RGB to NCS (Natural Color System).
-
-        NCS wiki => https://en.wikipedia.org/wiki/Natural_Color_System
-
         :param r: int
         :param g: int
         :param b: int
